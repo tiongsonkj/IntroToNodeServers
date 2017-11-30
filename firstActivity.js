@@ -17,15 +17,25 @@ var PORTONE = 7000;
 // listening to port 7500
 var PORTTWO = 7500;
 
-function positiveRequest(request, response) {
-	response.end("I know what I'm doing. This is the path: " + request.url);
+var phrases = ["I know what I'm doing.", "I really do not know what I am doing.", "I suck", "I'm great!"];
+
+var randomPhrase = phrases[Math.floor(Math.random() * randomPhrase.length)];
+
+// function positiveRequest(request, response) {
+// 	response.end("I know what I'm doing. This is the path: " + request.url);
+// }
+
+// function negativeRequest(request, response) {
+// 	response.end("I really do not know what I am doing. This is the path: " + request.url);
+// }
+
+function randomRequest(request, response) {
+	response.end(randomPhrase + "This is the path: " + request.url);
 }
 
-function negativeRequest(request, response) {
-	response.end("I really do not know what I am doing. This is the path: " + request.url);
-}
+// var serverOne = http.createServer(positiveRequest);
 
-var serverOne = http.createServer(positiveRequest);
+var serverOne = http.createServer(randomRequest);
 
 serverOne.listen(PORTONE, function() {
 
