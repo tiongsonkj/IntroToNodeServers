@@ -19,7 +19,7 @@ var PORTTWO = 7500;
 
 var phrases = ["I know what I'm doing.", "I really do not know what I am doing.", "I suck", "I'm great!"];
 
-var randomPhrase = phrases[Math.floor(Math.random() * randomPhrase.length)];
+var randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
 // function positiveRequest(request, response) {
 // 	response.end("I know what I'm doing. This is the path: " + request.url);
